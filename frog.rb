@@ -9,8 +9,16 @@
 # Exactly 4 numbers of hops will be provided to the
 # program (one number per line) as per the below example.
 hops = []
-4.times {hops << gets.chop}
+4.times {hops << gets.chop.to_i}
 
-
-print hops
-puts
+hops.each do |hop|
+  result = 0
+  add = 20
+  while hop>0 do
+    result+=add
+    add/=2
+    add = 20  if add < 5
+    hop-=1
+  end
+  puts result
+end
