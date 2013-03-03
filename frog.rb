@@ -8,6 +8,7 @@
 # Kermit (in centimeters) for the provided number of hops.
 # Exactly 4 numbers of hops will be provided to the
 # program (one number per line) as per the below example.
+
 hops = []
 4.times {hops << gets.chop.to_i}
 

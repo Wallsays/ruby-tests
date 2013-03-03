@@ -6,6 +6,7 @@
 #
 # Now the common employee ids are 1003 and 1005,
 # so the program should give the output as:
+
 ev1 = gets.chop.split(",")
 ev2 = gets.chop.split(",")
 ev3 = ev1-ev2
