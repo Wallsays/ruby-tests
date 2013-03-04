@@ -13,3 +13,10 @@
 # Test
 # You
 
+strings = []
+3.times {strings << gets.chop.split(" ")}
+strings.each do |string|
+  string.each do |word|
+    puts word if word == word.capitalize
+  end
+end
