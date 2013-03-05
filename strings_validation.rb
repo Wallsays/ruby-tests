@@ -32,11 +32,10 @@
 
 strings = []
 5.times {strings << gets.chop}
-
+crt1 = /^[A-Z].*\d{2}.*[A-Z]$/
+crt2 = /\s/
 strings.each do |str|
-  # java regexp ((?=.*[0-9])(?=.*[A-Z])(?=.*[@#*=])(?=[\\S]+$).{5,10})
-  regexp = /(\w*)\s(\w*)/ # rewrite
-  if str.match regexp
+  if str.match crt1 and not str.match crt2
     puts "OK"
   else
     puts "ERROR"

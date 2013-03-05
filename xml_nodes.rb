@@ -19,3 +19,17 @@
 # Simon
 # Suzanne
 
+require 'rexml/document'
+include REXML
+doc = ""
+10.times {doc+= "#{gets.chop}" }
+
+doc = Document.new(doc)
+hash = Hash.new
+
+doc.elements.each("classreport/student") do |e|
+  hash[e.attributes["studentid"]] = e.text
+end
+hash = hash.sort { |a, b| a[0] <=> b[0] }
+
+hash.each {|value| puts "#{value[1]}"}
